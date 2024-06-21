@@ -42,3 +42,17 @@ const herramientasDev = {
     ]
     
   };
+
+
+  const numeroAleatorio = (num) => {
+    return Math.floor((Math.random()) * (num+1));
+  }
+
+ 
+  const generadorMensaje = () => {
+    return `Comando Bash:\n${herramientasDev.comandosBash[numeroAleatorio(herramientasDev.comandosBash.length-1)]}.\n\nComando Git:\n${herramientasDev.comandosGit[numeroAleatorio(herramientasDev.comandosGit.length-1)]}.\n\nMétodo JavaScript:\n${herramientasDev.metodosJs[numeroAleatorio(herramientasDev.metodosJs.length-1)]}.`
+  }
+
+
+
+  console.log(generadorMensaje())
