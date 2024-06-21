@@ -39,6 +39,20 @@ const herramientasDev = {
       "Math.random(): Genera un número aleatorio entre 0 y 1",
       "Date.now(): Obtiene la fecha y hora actual en milisegundos",
       "console.log(mensaje): Muestra un mensaje en la consola",
+    ],
+
+    tecnologias: [
+      "JavaScript",
+      "Angular",
+      "Git",
+      "GitHub",
+      "React",
+      "TypeScript",
+      "AppScript",
+      "HTML",
+      "CSS",
+      "Python",
+      "SQL"
     ]
     
   };
@@ -53,6 +67,30 @@ const herramientasDev = {
     return `Comando Bash:\n${herramientasDev.comandosBash[numeroAleatorio(herramientasDev.comandosBash.length-1)]}.\n\nComando Git:\n${herramientasDev.comandosGit[numeroAleatorio(herramientasDev.comandosGit.length-1)]}.\n\nMétodo JavaScript:\n${herramientasDev.metodosJs[numeroAleatorio(herramientasDev.metodosJs.length-1)]}.`
   }
 
+
+
+  //Se ha intalado "npm install figlet" para lograr ejecutar el mensaje ASCII aleatorio
+
+  var figlet = require("figlet");
+
+  figlet.text(
+    herramientasDev.tecnologias[numeroAleatorio(herramientasDev.tecnologias.length-1)],
+    {
+      font: "Ghost",
+      horizontalLayout: "default",
+      verticalLayout: "default",
+      width: 100,
+      whitespaceBreak: true,
+    },
+    function (err, data) {
+      if (err) {
+        console.log("Something went wrong...");
+        console.dir(err);
+        return;
+      }
+      console.log(data);
+    }
+  );
 
 
   console.log(generadorMensaje())
